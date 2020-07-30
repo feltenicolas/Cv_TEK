@@ -4,6 +4,14 @@ Epitech Marseille promo 2020
 This is a NodeJS API designed to work with firebase.
 The goal of this API is to manage student CV to make it more acceccible to recruiters.
 
+
+/!!\ IMPORTANT !! You will need to create a file permissions.json :
+ - First go to : https://console.firebase.google.com/
+ - Then create a project
+ - Go to your project settings : https://console.firebase.google.com/project/[PROJECT ID]/settings/general
+ - Click on service accounts
+ - then click on generate new private key, it will normaly give you a file.json => This is the permissions.json file.
+
 The GET routes are : 
 
 - /api/getallstudents : You will get a list containings all students and all informations about their CV.

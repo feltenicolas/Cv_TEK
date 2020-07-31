@@ -245,10 +245,13 @@ app.post('/api/create', (req, res) => {
   app.get('/api/activatecv/:mail', (req, res) => {
     (async () => {
         try {
+            var date = new Date();
+            var expirationDate = date.getTime() + (30 * 24 * 60 * 60 * 1000);        
             console.log(req.params.mail);
             const document = db.collection('Utilisateurs').doc(req.params.mail);
             await document.update({
                 display: true,
+                expirationDate : expirationDate
             });
             return res.status(200).send("Vous venez de réactiver votre CV pour 1 mois avec l'adresse mail : " + req.params.mail);
         } catch (error) {
@@ -257,7 +260,6 @@ app.post('/api/create', (req, res) => {
         }
         })();
   })
-
 
 
   function CvDisplayManager(display, mail) {

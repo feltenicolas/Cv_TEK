@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<html>
+<head>
+	<link rel="icon" href="/img/epitech-logo.png">
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{promo}}</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0060AA;margin-bottom: 20px;" > 
+		<a class="navbar-brand" href="#">Epistage</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+				</li>
+                <li>
+                    <div class="dropdown show">
+                        <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Promos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-center" href="/promotek1">TEK 1</a>
+                            <a class="dropdown-item text-center" href="/promotek2">TEK 2</a>
+                            <a class="dropdown-item text-center" href="/promotek3">TEK 3</a>
+                            <a class="dropdown-item text-center" href="/promowac">WAC</a>
+                            <a class="dropdown-item text-center" href="/promomsc">MSC</a>
+                        </div>
+                    </div>
+                </li>
+			</ul>
+			<form id="search_form" class="form-inline my-2 my-lg-0" action="https://cvtek-2b310.web.app/api/search" method="GET">
+				<div class="form-group" style="margin-right: 5px;">
+    				<select name="type" class="form-control" id="select_type_search">
+      					<option value="promo">Promotion</option>
+      					<option value="nom">Nom</option>
+      					<option value="prenom">Prénom</option>
+      					<option value="mail">Mail</option>
+      					<option value="competences">Competence</option>
+				    </select>
+  				</div>
+				<input class="form-control mr-sm-2" type="input" name="research" id="input_search">
+				<button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="button_search">Recherche</button> 
+			</form>
+		</div>
+	</nav>
+	<div class="container">
+			{{#each formationList}}
+			<div class="row justify-content-center">
+				<h1 class="text-center">{{titre}}</h1>
+			</div>
+			<div class="row justify-content-center">
+				<p class="text-center"> {{description}}</p>
+			</div>
+			{{/each}}
+		<div class="row">
+            {{#each studentList}}
+			<div class="col-md-4" style="margin-bottom: 20px;">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="{{url_photo}}" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">{{nom}} {{prenom}}</h5>
+						<p class="card-text" style="white-space: nowrap;">{{competences}}</p>
+                        <p class="card-text" style="white-space: nowrap;">Promo {{promo}}</p>
+                        <a href="{{url_cv}}" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer" role="button" aria-pressed="true">En savoir plus</a>
+					</div>
+				</div>
+			</div>
+            {{/each}}
+        </div>
+	</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</html>

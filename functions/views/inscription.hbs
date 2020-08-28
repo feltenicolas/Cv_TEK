@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html> 
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="/img/epitech-logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription CV</title>
+
+</head>
+<body>
+    	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0060AA;margin-bottom: 20px;" > 
+		<a class="navbar-brand" href="#">Epistage</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Accueil</a>
+				</li>
+                <li>
+                    <div class="dropdown show">
+                        <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Promos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-center" href="/promotek1">TEK 1</a>
+                            <a class="dropdown-item text-center" href="/promotek2">TEK 2</a>
+                            <a class="dropdown-item text-center" href="/promotek3">TEK 3</a>
+                            <a class="dropdown-item text-center" href="/promowac">WAC</a>
+                            <a class="dropdown-item text-center" href="/promomsc">MSC</a>
+
+                        </div>
+                    </div>
+                </li>
+			</ul>
+			<form id="search_form" class="form-inline my-2 my-lg-0" action="https://cvtek-2b310.web.app/api/search" method="GET">
+				<div class="form-group" style="margin-right: 5px;">
+    				<select name="type" class="form-control" id="select_type_search">
+      					<option value="promo">Promotion</option>
+      					<option value="nom">Nom</option>
+      					<option value="prenom">Prénom</option>
+      					<option value="mail">Mail</option>
+      					<option value="competences">Competence</option>
+				    </select>
+  				</div>
+				<input class="form-control mr-sm-2" type="input" name="research" id="input_search">
+				<button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="button_search">Recherche</button> 
+			</form>
+		</div>
+	</nav>
+
+	<form>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+            		<div class="form-group">
+            			<label for="exampleInputEmail1">Nom</label>
+            			<input type="name" class="form-control" id="Nom" aria-describedby="emailHelp" >
+		            </div>
+                </div>
+
+                <div class="col-md-8">
+            		<div class="form-group">
+            			<label for="exampleInputPassword1">Prénom</label>
+	            		<input type="text" class="form-control" id="Prenom" >
+            		</div>
+                </div>
+
+                <div class="col-md-8">
+            		<div class="form-group">
+            			<label for="exampleInputPassword1">Compétences (Ex: NodeJs/C/C++/C#/HTML/CSS/JS)</label>
+	            		<input type="text" class="form-control" id="competences" >
+            		</div>
+                </div>
+
+				<div class="col-md-8">
+					<div class="form-group">
+						<label for="formation">Type de formation</label>
+						<select name="formation" id="formation" class="form-control">
+								<option value="PGE">PGE</option>
+								<option value="MSC">MSC</option>
+								<option value="WAC">WAC</option>
+						</select>
+					</div>
+				</div>
+
+                <div class="col-md-8">
+            		<div class="form-group">
+            			<label for="exampleInputPassword1">Promotion (promo 2025 si vous commencez epitech en 2020)</label>
+	            		<input type="number" class="form-control" id="Promo" >
+            		</div>
+                </div>
+
+                <div class="col-md-8">
+		            <div class="form-group">
+			            <label for="exampleInputEmail1">Adresse email</label>
+            			<input type="email" class="form-control" id="student_mail" aria-describedby="emailHelp">
+            		</div>
+                </div>
+
+                <div class="col-md-8">
+            		<div class="form-group">
+            			<label for="exampleInputEmail1">URL "carte de visite"</label>
+            			<input type="email" class="form-control" id="url_photo" aria-describedby="emailHelp">
+		            </div>
+                </div>
+
+                <div class="col-md-8">
+            		<div class="form-group">
+        			    <label for="exampleInputEmail1">URL CV en ligne</label>
+			            <input type="email" class="form-control" id="url_cv" aria-describedby="emailHelp">
+		            </div>
+                </div>
+
+                <div class="col-md-8 d-flex justify-content-center">
+		            <button type="button" class="btn btn-primary" onclick="inscription()">Envoyer</button>
+                </div>
+
+            </div>
+        </div>
+	</form>	
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script>
+    function inscription() {
+        const nom = $("#Nom").val();
+        const prenom = $('#Prenom').val();
+        const promo = parseInt($('#Promo').val(), 10);
+        const mail = $('#student_mail').val();
+        const url_photo = $('#url_photo').val();
+        const url_cv = $('#url_cv').val();
+        const competences = $('#competences').val();
+		const formation = $('#formation').val();
+        
+        if (nom === "" || prenom === "" || promo === "" || mail === "" || url_photo === "" || url_cv === "" || competences === "") {
+            alert("Vous devez remplir tous les champs !");
+        } else {
+        const obj = {nom: nom, prenom: prenom, promo: promo, student_mail:mail, url_photo: url_photo, url_cv: url_cv, competences:competences, formation:formation};
+
+		//$.post("http://localhost:5001/cvtek-2b310/us-central1/app/api/create", obj)
+        $.post( "https://cvtek-2b310.web.app/api/create", obj)
+        .done(function( data, textStatus, jqXHR ) {
+			const response = data;
+            alert(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert("Erreur : ", errorThrown, "textStatus:", textStatus);
+        });
+        }
+    }
+</script>
+
+</html> 
